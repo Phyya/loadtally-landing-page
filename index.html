@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoadTally - Book a Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<img src="./assets/logo-bg.jpeg" class="logo-top"/>
+
+<!-- Hero -->
+<header>
+    <div class="hero-content">
+        <div class="hero-carousel fade" id="heroText">
+            Stop Chasing Paperwork. Start Getting Paid Faster.
+        </div>
+        <button class="cta-btn" onclick="document.getElementById('demoForm').scrollIntoView({behavior:'smooth'});">Book a Demo</button>
+    </div>
+</header>
+
+<!-- About Us -->
+<section class="about-section">
+    <h1>ABOUT US</h1>
+    <p>
+        We help logistics companies, warehouses, and shipping businesses eliminate errors, prevent losses and gain real-time visibility with accurate load tally and tracking solutions.
+    </p>
+</section>
+
+<!-- Image Section -->
+<section class="image-section">
+    <img src="./assets/details_img.png" alt="LoadTally Details"/>
+</section>
+
+<!-- Demo Form -->
+<section id="demoForm" class="demo-section">
+    <h2>Book Your Personalized Demo</h2>
+    <p>Fill out the form and we’ll tailor your 15-minute demo to your fleet and workflow.</p>
+
+    <form id="loadTallyForm">
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="text" name="fullName" placeholder="Full Name *" required>
+        <input type="text" name="company" placeholder="Company Name *" required>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number *" required maxlength="11">        <label for="fleetSize">Number of Trucks in Your Fleet *</label>
+        <select name="fleetSize" id="fleetSize" required>
+            <option value="">Select...</option>
+            <option value="1-5">1-5</option>
+            <option value="5-10">5-10</option>
+            <option value="10-20">10-20</option>
+            <option value="20-100">20-100</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <div class="datetime-group">
+            <div class="datetime-field" id="demoDateField">
+                <label for="demoDate">Preferred Demo Date *</label>
+                <input type="date" name="demoDate" id="demoDate" required >
+            </div>
+            <div class="datetime-field" id="demoTimeField">
+                <label for="demoTime">Preferred Demo Time *</label>
+                <input type="time" name="demoTime" id="demoTime" required>
+            </div>
+        </div>
+
+        <textarea name="challenges" placeholder="Tell us about any specific challenges you’d like the demo to address"></textarea>
+
+        <button type="submit">Book Demo</button>
+    </form>
+
+    <!-- Thank You Message -->
+    <div id="thankYouMessage" class="thank-you" style="display:none;">
+        <h3>Thank You!</h3>
+        <p>Your demo request has been successfully submitted. We'll reach out shortly to schedule your personalized 15-minute session.</p>
+    </div>
+</section>
+
+
+<script src="script.js"></script>
+</body>
+</html>
