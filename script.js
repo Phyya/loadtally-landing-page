@@ -77,3 +77,4 @@ const form = document.getElementById('loadTallyForm');
                       alert("Network error. Please try again.");
                     }
                   });
+
