@@ -41,6 +41,29 @@ const phoneInput = document.getElementById('phone');
 phoneInput.addEventListener('input', (e) => {
   e.target.value = e.target.value.replace(/[^0-9]/g, '');
 });
+
+const video = document.getElementById("promoVideo");
+
+// Create play button dynamically (no HTML restructuring)
+const playBtn = document.createElement("div");
+playBtn.className = "video-play-button";
+
+const container = video.parentElement;
+container.appendChild(playBtn);
+
+playBtn.addEventListener("click", () => {
+  video.play();
+  container.classList.add("playing");
+});
+
+// Show button again if paused
+video.addEventListener("pause", () => {
+  container.classList.remove("playing");
+});
+
+video.addEventListener("ended", () => {
+  container.classList.remove("playing");
+});
 // Form submission
 const form = document.getElementById('loadTallyForm');
                   const thankYou = document.getElementById('thankYouMessage');
