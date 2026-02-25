@@ -243,6 +243,7 @@ button:hover { opacity:0.9; }
     transform: translateX(-50%);
   }
 }
+
 .video-section {
   padding: 60px 20px;
   background: linear-gradient(135deg, #30b0a0, #002040);
@@ -256,25 +257,26 @@ button:hover { opacity:0.9; }
   margin-bottom: 30px;
 }
 
-/* Key fix: responsive aspect ratio container */
+/* FIXED: remove forced aspect ratio box */
 .video-container {
-  max-width: 900px;      /* controls width */
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  aspect-ratio: 16 / 9;  /* makes it fit screen proportionally */
   background: black;
+  /* REMOVED: aspect-ratio: 16 / 9; */
 }
 
-/* For iframe OR video */
+/* Show full video instead of cropping */
 .video-container iframe,
 .video-container video {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* prevents weird stretching */
+  height: auto;          /* critical: keeps full video visible */
+  object-fit: contain;   /* prevents cropping */
   display: block;
+  max-height: 70vh;      /* keeps it elegant, not oversized */
 }
 /* Responsive */
 @media(max-width:600px){
